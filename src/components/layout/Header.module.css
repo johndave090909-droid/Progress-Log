@@ -1,0 +1,83 @@
+.header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  flex-shrink: 0;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greetingMain {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.greetingSub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: 1px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  transition: background 0.15s;
+  cursor: pointer;
+  border: none;
+}
+
+.iconBtn:hover {
+  background: var(--color-border);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-sidebar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.roleTag {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-sidebar-bg);
+  background: #e8f5e9;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

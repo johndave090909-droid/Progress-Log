@@ -1,0 +1,210 @@
+.page {
+  max-width: 700px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.backBtn:hover {
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.required::after {
+  content: ' *';
+  color: var(--color-danger);
+}
+
+.input, .select, .textarea {
+  padding: 10px var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--color-primary);
+  background: white;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 90px;
+  line-height: 1.5;
+}
+
+.riskGroup {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.riskOption {
+  display: none;
+}
+
+.riskLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--color-text-secondary);
+}
+
+.riskLabel:hover {
+  border-color: var(--color-primary);
+}
+
+.riskOption:checked + .riskLabel {
+  border-color: currentColor;
+}
+
+.risk1:checked + .riskLabel {
+  border-color: var(--color-risk-1);
+  color: var(--color-risk-1);
+  background: #e8f5e9;
+}
+
+.risk2:checked + .riskLabel {
+  border-color: var(--color-risk-2);
+  color: var(--color-risk-2);
+  background: #fff3e0;
+}
+
+.risk3:checked + .riskLabel {
+  border-color: var(--color-risk-3);
+  color: var(--color-risk-3);
+  background: #ffebee;
+}
+
+.sectionDivider {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.error {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  padding-top: var(--space-3);
+}
+
+.cancelBtn {
+  padding: 10px var(--space-6);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: white;
+  transition: all 0.15s;
+}
+
+.cancelBtn:hover {
+  border-color: var(--color-text-secondary);
+  color: var(--color-text-primary);
+}
+
+.submitBtn {
+  padding: 10px var(--space-6);
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

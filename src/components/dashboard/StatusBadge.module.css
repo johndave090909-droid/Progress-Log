@@ -1,0 +1,26 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.resolved {
+  background: var(--color-badge-resolved-bg);
+  color: var(--color-badge-resolved-text);
+}
+
+.pending {
+  background: var(--color-badge-pending-bg);
+  color: var(--color-badge-pending-text);
+}
+
+.high {
+  background: var(--color-badge-high-bg);
+  color: var(--color-badge-high-text);
+}
