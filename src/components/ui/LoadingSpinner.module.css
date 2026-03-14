@@ -1,20 +1,71 @@
-.wrapper {
+.screen {
+  position: fixed;
+  inset: 0;
+  background: var(--color-sidebar-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-10);
-  width: 100%;
+  z-index: 9999;
 }
 
-.spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid var(--color-border);
-  border-top-color: var(--color-primary);
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.logoWrap {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-lg);
+  background: var(--color-sidebar-bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.logoIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.appName {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.02em;
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.dots span {
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  animation: spin 0.7s linear infinite;
+  background: rgba(255, 255, 255, 0.5);
+  animation: bounce 1.2s ease-in-out infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.95); opacity: 0.85; }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); background: rgba(255,255,255,0.4); }
+  40% { transform: translateY(-6px); background: rgba(255,255,255,0.95); }
 }

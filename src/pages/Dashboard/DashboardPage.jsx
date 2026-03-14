@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useIssues } from '@/hooks/useIssues'
+import { useUsers } from '@/hooks/useUsers'
 import StatCard from '@/components/dashboard/StatCard'
 import IssuesTable from '@/components/dashboard/IssuesTable'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
@@ -17,6 +18,7 @@ function getWeekStart() {
 
 export default function DashboardPage() {
   const { issues, loading } = useIssues()
+  const { users } = useUsers()
 
   const today = getToday()
   const weekStart = getWeekStart()
@@ -69,7 +71,7 @@ export default function DashboardPage() {
             + Add Issue
           </Link>
         </div>
-        <IssuesTable issues={issues} />
+        <IssuesTable issues={issues} users={users} />
       </div>
     </div>
   )

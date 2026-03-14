@@ -81,3 +81,30 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--space-3) var(--space-4);
+    height: 56px;
+  }
+
+  .greetingMain {
+    font-size: var(--font-size-md);
+  }
+
+  .greetingSub {
+    display: none;
+  }
+
+  .date {
+    display: none;
+  }
+
+  .roleTag {
+    display: none;
+  }
+
+  .right {
+    gap: var(--space-3);
+  }
+}

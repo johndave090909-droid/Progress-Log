@@ -6,7 +6,7 @@ import ImageUploader from '@/components/forms/ImageUploader'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import styles from './AddEditIssuePage.module.css'
 
-const CATEGORIES = ['Kitchen', 'Bakery', 'Dry', 'Chill', 'Chiller']
+const CATEGORIES = ['Kitchen', 'Bakery', 'Dry', 'Chill', 'Chiller', 'Equipment']
 
 const EMPTY = {
   issue: '',

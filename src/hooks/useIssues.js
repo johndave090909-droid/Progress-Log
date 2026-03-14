@@ -11,6 +11,11 @@ export function useIssues() {
       (data) => {
         setIssues(data)
         setLoading(false)
+      },
+      (err) => {
+        console.error('Firestore error:', err)
+        setError(err.message)
+        setLoading(false)
       }
     )
     return unsubscribe

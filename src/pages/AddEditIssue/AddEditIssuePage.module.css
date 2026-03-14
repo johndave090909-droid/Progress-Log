@@ -9,6 +9,21 @@
   margin-bottom: var(--space-8);
 }
 
+@media (max-width: 768px) {
+  .page {
+    max-width: 100%;
+  }
+
+  .pageHeader {
+    margin-bottom: var(--space-4);
+  }
+
+  .card {
+    padding: var(--space-4) !important;
+    border-radius: var(--radius-md) !important;
+  }
+}
+
 .backBtn {
   display: flex;
   align-items: center;

@@ -6,20 +6,22 @@ import {
   deleteDoc,
   getDoc,
   onSnapshot,
-  orderBy,
-  query,
-  serverTimestamp,
 } from 'firebase/firestore'
 import { db } from './config'
 
 const COL = 'kitchen_issues'
 
-export function subscribeToIssues(callback) {
-  const q = query(collection(db, COL), orderBy('dateAdded', 'desc'))
-  return onSnapshot(q, (snap) => {
-    const issues = snap.docs.map((d) => ({ id: d.id, ...d.data() }))
-    callback(issues)
-  })
+export function subscribeToIssues(onData, onError) {
+  return onSnapshot(
+    collection(db, COL),
+    (snap) => {
+      const issues = snap.docs
+        .map((d) => ({ id: d.id, ...d.data() }))
+        .sort((a, b) => (b.dateAdded || '').localeCompare(a.dateAdded || ''))
+      onData(issues)
+    },
+    (err) => onError && onError(err)
+  )
 }
 
 export async function getIssueById(id) {

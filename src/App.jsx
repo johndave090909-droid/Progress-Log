@@ -6,6 +6,7 @@ import LoginPage from '@/pages/Login/LoginPage'
 import DashboardPage from '@/pages/Dashboard/DashboardPage'
 import AddEditIssuePage from '@/pages/AddEditIssue/AddEditIssuePage'
 import IssueDetailPage from '@/pages/IssueDetail/IssueDetailPage'
+import AdminPage from '@/pages/Admin/AdminPage'
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
               <Route path="/issues/new" element={<AddEditIssuePage />} />
               <Route path="/issues/:id" element={<IssueDetailPage />} />
               <Route path="/issues/:id/edit" element={<AddEditIssuePage />} />
+              <Route path="/admin" element={<AdminPage />} />
             </Route>
           </Route>
 
