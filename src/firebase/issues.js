@@ -8,6 +8,7 @@ import {
   onSnapshot,
 } from 'firebase/firestore'
 import { db } from './config'
+import { hawaiiToday } from '@/utils/date'
 
 const COL = 'kitchen_issues'
 
@@ -34,7 +35,7 @@ export async function addIssue(data) {
   return addDoc(collection(db, COL), {
     ...data,
     status: 'Pending',
-    dateAdded: new Date().toISOString().slice(0, 10),
+    dateAdded: hawaiiToday(),
   })
 }
 
@@ -45,7 +46,7 @@ export async function updateIssue(id, data) {
 export async function resolveIssue(id) {
   return updateDoc(doc(db, COL, id), {
     status: 'Resolved',
-    dateResolved: new Date().toISOString().slice(0, 10),
+    dateResolved: hawaiiToday(),
   })
 }
 

@@ -1,20 +1,12 @@
 import { useAuth } from '@/hooks/useAuth'
+import { hawaiiHour, hawaiiFullDate } from '@/utils/date'
 import styles from './Header.module.css'
 
 function getGreeting() {
-  const h = new Date().getHours()
+  const h = hawaiiHour()
   if (h < 12) return 'Good Morning'
   if (h < 17) return 'Good Afternoon'
   return 'Good Evening'
-}
-
-function formatDate() {
-  return new Date().toLocaleDateString('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  })
 }
 
 function getInitials(name = '') {
@@ -41,7 +33,7 @@ export default function Header() {
       </div>
 
       <div className={styles.right}>
-        <span className={styles.date}>{formatDate()}</span>
+        <span className={styles.date}>{hawaiiFullDate()}</span>
 
         <button className={styles.iconBtn} title="Notifications">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">

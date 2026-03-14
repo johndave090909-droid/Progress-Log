@@ -4,24 +4,15 @@ import { useUsers } from '@/hooks/useUsers'
 import StatCard from '@/components/dashboard/StatCard'
 import IssuesTable from '@/components/dashboard/IssuesTable'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
+import { hawaiiToday, hawaiiWeekStart } from '@/utils/date'
 import styles from './DashboardPage.module.css'
-
-function getToday() {
-  return new Date().toISOString().slice(0, 10)
-}
-
-function getWeekStart() {
-  const d = new Date()
-  d.setDate(d.getDate() - d.getDay())
-  return d.toISOString().slice(0, 10)
-}
 
 export default function DashboardPage() {
   const { issues, loading } = useIssues()
   const { users } = useUsers()
 
-  const today = getToday()
-  const weekStart = getWeekStart()
+  const today = hawaiiToday()
+  const weekStart = hawaiiWeekStart()
 
   const todayCount = issues.filter((i) => i.dateAdded === today).length
   const weekCount = issues.filter((i) => i.dateAdded >= weekStart).length

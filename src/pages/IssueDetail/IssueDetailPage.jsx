@@ -5,6 +5,7 @@ import StatusBadge from '@/components/dashboard/StatusBadge'
 import ConfirmModal from '@/components/ui/ConfirmModal'
 import LoadingSpinner from '@/components/ui/LoadingSpinner'
 import { useAuth } from '@/hooks/useAuth'
+import { hawaiiToday } from '@/utils/date'
 import styles from './IssueDetailPage.module.css'
 
 function RiskTag({ level }) {
@@ -47,7 +48,7 @@ export default function IssueDetailPage() {
       setIssue((prev) => ({
         ...prev,
         status: 'Resolved',
-        dateResolved: new Date().toISOString().slice(0, 10),
+        dateResolved: hawaiiToday(),
       }))
       setShowResolve(false)
     } catch {
